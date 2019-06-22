@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "script",
+    "ecmaVersion": 6,
+    "allowImportExportEverywhere": true
+  },
+  "plugins": ["node", "jest"],
+  "extends": ["eslint:recommended", "plugin:node/recommended", "plugin:jest/recommended"],
+  "rules": {
+    "no-console": "warn",
+    "comma-dangle": [2, "never"],
+    "semi": 0,
+    "max-len": 0,
+    "no-multiple-empty-lines": 0,
+    "object-shorthand": 0,
+    "padded-blocks": 0
+  }
+}
