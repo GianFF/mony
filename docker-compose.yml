@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  frontend:
+    image: edymberg/mony-app-front:v.0.0.1
+    ports:
+      - "8080:8080"
+  backend:
+    image:  edymberg/mony-app-back:v.0.0.1
+    ports:
+      - "3001:3001"
