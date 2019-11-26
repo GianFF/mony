@@ -1,5 +1,5 @@
-import Gasto from "./gasto";
-import CentroDeCosto from "./centro-de-costo";
+import Gasto from "../../src/models/gasto";
+import CentroDeCosto from "../../src/models/centro-de-costo";
 
 describe('Un Centro de Costo', () => {
   let descripcion
@@ -11,7 +11,7 @@ describe('Un Centro de Costo', () => {
     descripcion = 'Descripcion'
     costo = 10
     centroDeCostoParaElAuto = new CentroDeCosto('Auto')
-    gasto = new Gasto(centroDeCostoParaElAuto, descripcion, costo)
+    gasto = new Gasto(descripcion, costo)
   })
 
   it('tiene un titulo', () => {
@@ -51,10 +51,11 @@ describe('Un Centro de Costo', () => {
       expect(centroDeCostoParaElAuto.total).toEqual(0)
     })
 
-    it('cuando tiene gastos el total es el costo del gasto', () => {
+    it('cuando tiene gastos el total es la sumatoria de los costos de los gastos', () => {
+      centroDeCostoParaElAuto.agregarGasto(gasto)
       centroDeCostoParaElAuto.agregarGasto(gasto)
 
-      expect(centroDeCostoParaElAuto.total).toEqual(gasto.costo)
+      expect(centroDeCostoParaElAuto.total).toEqual((gasto.costo)*2)
     })
   })
 })
