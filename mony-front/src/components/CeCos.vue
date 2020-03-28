@@ -2,8 +2,8 @@
   <div class="contenedor">
     <select class="cecos" v-model="ceco">
       <option value=""></option>     
-      <option v-for="ceco in cecos" v-bind:key="ceco.id" v-bind:value="ceco"> 
-        {{ceco.titulo}} 
+      <option v-for="(ceco, index) in cecos" v-bind:key="index" v-bind:value="ceco">
+        {{cecoName(ceco)}}
       </option>
     </select>
   </div>
@@ -21,10 +21,10 @@ export default {
   },
   computed: {
     ceco: {
-      get () {
+      get() {
         return ''
       },
-      set (ceco) {
+      set(ceco) {
         this.setCeco(ceco)
       },
     },
@@ -33,6 +33,9 @@ export default {
     ...mapMutations({
       setCeco: MUTATION_SET_CECO,
     }),
+    cecoName(ceco) {
+      return `${ceco.superCeco}-${ceco.ceco}`
+    },
   },
 }
 </script>

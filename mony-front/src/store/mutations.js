@@ -1,4 +1,5 @@
-export const INCREMENT = 'increment'
 export const MUTATION_SET_CECOS = 'setCecos'
 export const MUTATION_SET_CECO = 'setCeco'
 export const MUTATION_SET_GASTO = 'setGasto'
+export const MUTATION_SET_GOOD_TOAST = 'setGoodToast'
+export const MUTATION_SET_BAD_TOAST = 'setBadToast'
